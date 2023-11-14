@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static java.lang.Math.PI;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AtanMathFunctionTest {
+class cos2xFunctionTest {
     @Test
     void apply() {
         cos2xFunctions cos2xfunctions = new cos2xFunctions();
