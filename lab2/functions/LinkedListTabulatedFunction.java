@@ -198,13 +198,13 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
     }
     @Override
     public String toString(){
-        Node element = head;
-        String result = element.toString();
+        Node elem = head;
+        String result = elem.toString();
         result += " ";
-        while(element != head.prev)
+        while(elem != head.prev)
         {
-            element = element.next;
-            result += element.toString();
+            elem = elem.next;
+            result += elem.toString();
             result += " ";
         }
         return result;

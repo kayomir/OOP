@@ -138,5 +138,39 @@ class LinkedListTabulatedFunctionTest {
         Object clone = node.clone();
         assertTrue(node.equals(clone));
     }
+    @Test
+    void toStringList(){
+        assertEquals("(1.0; 1.0) (2.0; 2.0) (3.3; 3.0) (4.4; 4.0) (5.0; 5.0) (6.0; 6.0) ", linkedListTabulatedFunction1.toString());
+        assertEquals("(6.0; 2.0) ",linkedListTabulatedFunction2.toString() );
+        assertNotEquals("(5.0; 5.0) ", linkedListTabulatedFunction2.toString());
+        assertEquals("(7.0; 9.0) (8.0; 7.0) ",linkedListTabulatedFunction3.toString() );
+    }
+    @Test
+    void equalsList(){
+        double[] xValue11 = {1, 2, 3.3, 4.4, 5, 6};
+        double[] yValue11 = {1, 2, 3, 4, 5, 6};
+        double[] xValue22 = {1, 2};
+        double[] yValue22 = {1, 2};
+        LinkedListTabulatedFunction linkedListTabulatedFunction11 = new LinkedListTabulatedFunction(xValue11,yValue11);
+        LinkedListTabulatedFunction linkedListTabulatedFunction22 = new LinkedListTabulatedFunction(xValue22,yValue22);
+        assertTrue(linkedListTabulatedFunction1.equals(linkedListTabulatedFunction11));
+        assertTrue(linkedListTabulatedFunction1.equals(linkedListTabulatedFunction1));
+        assertFalse(linkedListTabulatedFunction1.equals(linkedListTabulatedFunction2));
+        assertFalse(linkedListTabulatedFunction1.equals(linkedListTabulatedFunction22));
+    }
+    @Test
+    void hashList(){
+        double[] xValue11 = {1, 2, 3.3, 4.4, 5, 6};
+        double[] yValue11 = {1, 2, 3, 4, 5, 6};
+        LinkedListTabulatedFunction linkedListTabulatedFunction11 = new LinkedListTabulatedFunction(xValue11,yValue11);
+        assertEquals(linkedListTabulatedFunction1.hashCode(), linkedListTabulatedFunction11.hashCode());
+        assertNotEquals(linkedListTabulatedFunction1.hashCode(), linkedListTabulatedFunction2.hashCode());
 
+    }
+
+    @Test
+    void cloneList(){
+        Object test = linkedListTabulatedFunction1.clone();
+        assertTrue(linkedListTabulatedFunction1.equals(test));
+    }
 }
