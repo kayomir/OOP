@@ -212,18 +212,17 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
     @Override
     public boolean equals(Object o){
         if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        LinkedListTabulatedFunction o_o = (LinkedListTabulatedFunction) o;
+        if (this.count != o_o.count) return false;
+        Node o_elem = o_o.head;
         Node elem = head;
-
-        if (this.getCount() == ((LinkedListTabulatedFunction)o).getCount() && this.getClass() == o.getClass()){
-            Node o_elem = ((LinkedListTabulatedFunction)o).head;
-            do{
-                if (!elem.equals(o_elem)) return false;
-                elem = elem.next;
-                o_elem = o_elem.next;
-            }while(elem != head);
-            return true;
+        for (int i = 0; i < this.count; i++){
+            if (!elem.equals(o_elem)) return false;
+            o_elem = o_elem.next;
+            elem = elem.next;
         }
-        return false;
+        return true;
     }
 
     @Override
