@@ -1,4 +1,7 @@
 package functions;
+import java.awt.*;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 public class LinkedListTabulatedFunction extends AbstractTabulatedFunction implements Cloneable {
     static class Node implements Cloneable {
@@ -56,25 +59,29 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
     }
 
     public LinkedListTabulatedFunction(double[] xValues, double[] yValues) {
+        if(xValues.length < 2) throw new IllegalArgumentException("недопустимое значение");
         for (int i = 0; i < xValues.length; i++) {
             addNode(xValues[i], yValues[i]);
         }
     }
 
     public LinkedListTabulatedFunction(MathFunction source, double xFrom, double xTo, int count) {
-        if (xFrom > xTo) {
-            double vrem = xTo;
-            xTo = xFrom;
-            xFrom = vrem;
-        }
-        if (xFrom != xTo) {
-            double razn = (xTo - xFrom) / (count - 1);
-            for (int i = 0; i < count; i++) {
-                addNode(xFrom + i * razn, source.apply(xFrom + i * razn));
+        if(count < 2 ) throw new IllegalArgumentException("недопустимое значение");
+        else {
+            if (xFrom > xTo) {
+                double vrem = xTo;
+                xTo = xFrom;
+                xFrom = vrem;
             }
-        } else {
-            for (int i = 0; i < count; i++) {
-                addNode(xFrom, source.apply(xFrom));
+            if (xFrom != xTo) {
+                double razn = (xTo - xFrom) / (count - 1);
+                for (int i = 0; i < count; i++) {
+                    addNode(xFrom + i * razn, source.apply(xFrom + i * razn));
+                }
+            } else {
+                for (int i = 0; i < count; i++) {
+                    addNode(xFrom, source.apply(xFrom));
+                }
             }
         }
     }
@@ -92,30 +99,42 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
     }
 
     private Node getNode(int index) {
-        if (index == 0) {
-            return head;
-        }
+        if(index < 0 || index >= count) throw new IllegalArgumentException("недопустимое значение");
+        else {
+            if (index == 0) {
+                return head;
+            }
 
-        Node elem = head;
-        for (int i = 0; i <= index; i++) {
-            elem = elem.next;
+            Node elem = head;
+            for (int i = 0; i <= index; i++) {
+                elem = elem.next;
+            }
+            return elem.prev;
         }
-        return elem.prev;
     }
 
     public double getX(int index) {
-        Node elem = getNode(index);
-        return elem.x;
+        if(index < 0 || index >= count) throw new IllegalArgumentException("недопустимое значение");
+        else {
+            Node elem = getNode(index);
+            return elem.x;
+        }
     }
 
     public double getY(int index) {
-        Node elem = getNode(index);
-        return elem.y;
+        if(index < 0 || index >= count) throw new IllegalArgumentException("недопустимое значение");
+        else {
+            Node elem = getNode(index);
+            return elem.y;
+        }
     }
 
     public void setY(int index, double value) {
-        Node elem = getNode(index);
-        elem.y = value;
+        if(index < 0 || index >= count) throw new IllegalArgumentException("недопустимое значение");
+        else {
+            Node elem = getNode(index);
+            elem.y = value;
+        }
     }
 
     public int indexOfX(double x) {
@@ -126,7 +145,7 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
             index++;
             elem = elem.next;
         } while (elem != head.prev);
-        return -1;
+        throw new IllegalArgumentException("недопустимое значение");
     }
 
     public int indexOfY(double y) {
@@ -137,11 +156,11 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
             index++;
             elem = elem.next;
         } while (elem != head.prev);
-        return -1;
+        throw new IllegalArgumentException("недопустимое значение");
     }
 
     protected int floorIndexOfX(double x) {
-        if (head.x > x) return 0;
+        if (head.x > x) throw new IllegalArgumentException("недопустимое значение");
         else {
             Node elem = head;
             int i = 1;
@@ -156,39 +175,23 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
     }
 
     protected double interpolate(double x, int floorIndex) {
-        if (head.next == head) {
-            return head.y;
-        }
-        else {
             double leftX = getX(floorIndex - 1);
             double leftY = getY(floorIndex - 1);
             double rightX = getX(floorIndex);
             double rightY = getY(floorIndex);
             return interpolate(x, leftX, rightX, leftY, rightY);
-        }
-
     }
 
     protected double extrapolateLeft(double x) {
-        if (head.next == head) {
-            return head.y;
-        }
-        else return (head.y + (((head.next.y - head.y) / (head.next.x - head.x)) * (x - head.x)));
+        return (head.y + (((head.next.y - head.y) / (head.next.x - head.x)) * (x - head.x)));
     }
 
     protected double extrapolateRight(double x) {
-        if (head.next == head) {
-            return head.y;
-        }
-        else
             return (head.prev.prev.y + (((head.prev.y - head.prev.prev.y) / (head.prev.x - head.prev.prev.x)) * (x - head.prev.prev.x)));
     }
 
     protected double interpolate(double x, double leftX, double rightX, double leftY, double rightY) {
-        if (head.next == head) {
-            return head.y;
-        }
-        else return (leftY + (((rightY - leftY) / (rightX - leftX)) * (x - leftX)));
+        return (leftY + (((rightY - leftY) / (rightX - leftX)) * (x - leftX)));
     }
     public double apply(double x) {
         if (x < leftBound()) return extrapolateLeft(x);
@@ -251,5 +254,25 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
         LinkedListTabulatedFunction clone = new LinkedListTabulatedFunction(x_values_clone, y_values_clone);
         return clone;
     }
-}
+    @Override
+    public Iterator<Point> iterator() {
+        return new Iterator<Point>() {
+            private Node node=head;
+            @Override
+            public boolean hasNext() {
+                return ((node.next!=head)&&(node.next!=null));
+            }
 
+            @Override
+            public Point next() {
+                if(!hasNext()){
+                    throw new NoSuchElementException();
+                }
+                Point point = new Point(node.x, node.y);
+                if (node == head.prev) node = null;
+                else node=node.next;
+                return point;
+            }
+        };
+    }
+}

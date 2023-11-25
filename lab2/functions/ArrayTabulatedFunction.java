@@ -1,7 +1,9 @@
 package functions;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Iterator;
 
 public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements Cloneable{
 
@@ -12,34 +14,40 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
     protected int count;
 
     public ArrayTabulatedFunction(double[] xValues, double[] yValues){
-        this.count = xValues.length;
-        this.xValues = Arrays.copyOf(xValues,xValues.length);
-        this.yValues = Arrays.copyOf(yValues,yValues.length);
+        if(xValues.length < 2) throw new IllegalArgumentException("недопустимое значение");
+        else {
+            this.count = xValues.length;
+            this.xValues = Arrays.copyOf(xValues, xValues.length);
+            this.yValues = Arrays.copyOf(yValues, yValues.length);
+        }
     }
 
     public ArrayTabulatedFunction(MathFunction source, double xFrom, double xTo, int count) {
-        this.count = count;
-        this.xValues = new double[count];
-        this.yValues = new double[count];
-        if (xFrom < xTo) {
-            this.xValues[0] = xFrom;
-            this.xValues[count-1] = xTo;
-        } else {
-            this.xValues[0] = xTo;
-            this.xValues[count-1] = xFrom;
-        }
-        double delta = (this.xValues[count-1]-this.xValues[0])/(count-1);
-        this.yValues[0] = source.apply(this.xValues[0]);
-        this.yValues[count-1] = source.apply(this.xValues[count-1]);
-        for (int i = 1; i < count; i++){
-            this.xValues[i] = this.xValues[i-1]+delta;
-            this.yValues[i] = source.apply(this.xValues[i]);
+        if(count < 2) throw new IllegalArgumentException("недопустимое значение");
+        else {
+            this.count = count;
+            this.xValues = new double[count];
+            this.yValues = new double[count];
+            if (xFrom < xTo) {
+                this.xValues[0] = xFrom;
+                this.xValues[count - 1] = xTo;
+            } else {
+                this.xValues[0] = xTo;
+                this.xValues[count - 1] = xFrom;
+            }
+            double delta = (this.xValues[count - 1] - this.xValues[0]) / (count - 1);
+            this.yValues[0] = source.apply(this.xValues[0]);
+            this.yValues[count - 1] = source.apply(this.xValues[count - 1]);
+            for (int i = 1; i < count; i++) {
+                this.xValues[i] = this.xValues[i - 1] + delta;
+                this.yValues[i] = source.apply(this.xValues[i]);
+            }
         }
     }
 
     @Override
     protected int floorIndexOfX(double x) {
-        if (x < this.leftBound()) return 0;
+        if (x < this.leftBound()) throw new IllegalArgumentException("недопустимое значение");
         if (x > this.rightBound()) return count-1;
 
         int leftBorder = 0;
@@ -60,25 +68,21 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
 
     @Override
     protected double extrapolateLeft(double x) {
-        if (count == 1) return yValues[0];
         return yValues[1]+(((x-xValues[1])/(xValues[0]-xValues[1]))*(yValues[0]-yValues[1]));
     }
 
     @Override
     protected double extrapolateRight(double x) {
-        if (count == 1) return yValues[0];
         return yValues[count-2]+(((x-xValues[count-2])/(xValues[count-1]-xValues[count-2]))*(yValues[count-1]-yValues[count-2]));
     }
 
     @Override
     protected double interpolate(double x, int floorIndex) {
-        if (count == 1) return yValues[0];
         return yValues[floorIndex]+((yValues[floorIndex+1]-yValues[floorIndex])/(xValues[floorIndex+1]-xValues[floorIndex]))*(x-xValues[floorIndex]);
     }
 
         @Override
     protected double interpolate(double x, double leftX, double rightX, double leftY, double rightY) {
-        if (count == 1) return yValues[0];
         return leftY+((rightY-leftY)/(rightX-leftX))*(x-leftX);
     }
 
@@ -89,22 +93,25 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
 
     @Override
     public double getX(int index) {
+        if (index < 0 || index >= this.count) throw new IllegalArgumentException("недопустимое значение");
         return this.xValues[index];
     }
 
     @Override
     public double getY(int index) {
+        if (index < 0 || index >= this.count) throw new IllegalArgumentException("недопустимое значение");
         return this.yValues[index];
     }
 
     @Override
     public void setY(int index, double value) {
+        if(index < 0 || index >= this.count) throw new IllegalArgumentException("недопустимое значение");
         this.yValues[index] = value;
     }
 
     @Override
     public int indexOfX(double x) {                 //Поиск индекса значения использует бинарный поиск в массиве
-        if ((x < this.leftBound()) || (x > this.rightBound())) return -1;               //Выход из поиска при искомом значении вне границ значений массива
+        if ((x < this.leftBound()) || (x > this.rightBound())) throw new IllegalArgumentException("недопустимое значение"); //Выход из поиска при искомом значении вне границ значений массива
         // Создаем границы со значениями индексов крайних значений массива
         int leftBorder = 0;
         int rightBorder = this.xValues.length - 1;
@@ -131,7 +138,7 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
 
     @Override
     public int indexOfY(double y) {
-        if ((y < this.getY(0)) || (y > this.getY(this.count-1))) return -1;
+        if ((y < this.getY(0)) || (y > this.getY(this.count-1))) throw new IllegalArgumentException("недопустимое значение");
         int leftBorder = 0;
         int rightBorder = this.yValues.length - 1;
         while (leftBorder <= rightBorder) {
@@ -194,5 +201,10 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
     @Override
     public Object clone() {
         return new ArrayTabulatedFunction(this.xValues, this.yValues);
+    }
+    @Override
+    public Iterator<Point> iterator()
+    {
+        throw new UnsupportedOperationException();
     }
 }

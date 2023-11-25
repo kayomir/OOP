@@ -1,5 +1,6 @@
 package functions;
 
+import functions.cos2xFunctions;
 import org.junit.jupiter.api.Test;
 import static java.lang.Math.PI;
 import static org.junit.jupiter.api.Assertions.*;

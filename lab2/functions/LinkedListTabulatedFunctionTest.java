@@ -1,8 +1,10 @@
 package functions;
 
+import functions.LinkedListTabulatedFunction;
+import functions.SqrFunction;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.Objects;
+
 class LinkedListTabulatedFunctionTest {
 
     double[] xValue = {1, 2, 3.3, 4.4, 5, 6};

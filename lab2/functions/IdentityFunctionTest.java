@@ -1,5 +1,8 @@
 package functions;
 
+import functions.ConstantFunction;
+import functions.IdentityFunction;
+import functions.MathFunction;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
