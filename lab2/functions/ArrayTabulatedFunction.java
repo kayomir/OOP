@@ -103,29 +103,22 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
     }
 
     @Override
-    public int indexOfX(double x) {                 //Поиск индекса значения использует бинарный поиск в массиве
-        if ((x < this.leftBound()) || (x > this.rightBound())) return -1;               //Выход из поиска при искомом значении вне границ значений массива
-        // Создаем границы со значениями индексов крайних значений массива
+    public int indexOfX(double x) {
+        if ((x < this.leftBound()) || (x > this.rightBound())) return -1;
         int leftBorder = 0;
         int rightBorder = this.xValues.length - 1;
-        // пока левая и правая границы поиска не равны
         while (leftBorder <= rightBorder) {
-            // индекс текущего элемента находится посередине
-            int middle = (leftBorder + rightBorder) / 2;    //Находим центральный элемент массива
-            double current = this.xValues[middle];    //Находим текущий элемент массива
+            int middle = (leftBorder + rightBorder) / 2;
+            double current = this.xValues[middle];
 
             if (current == x) {
-                // нашли элемент - возвращаем его индекс
                 return middle;
             } else if (current < x) {
-                // текущий элемент меньше искомого - сдвигаем левую границу
                 leftBorder = middle + 1;
             } else {
-                // иначе сдвигаем правую границу
                 rightBorder = middle - 1;
             }
         }
-        // проверили весь массив, но не нашли элемент
         return -1;
     }
 
