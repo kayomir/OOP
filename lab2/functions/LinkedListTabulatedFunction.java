@@ -97,14 +97,13 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
     public double rightBound() {
         return head.prev.x;
     }
-
     Node getNode(int index) {
-        if(index < 0 || index >= count) throw new IllegalArgumentException("недопустимое значение");
-        else {
+        if (index < 0 || index >= count) {
+            throw new IllegalArgumentException("индекс выходит за рамки допустимых значения");
+        } else {
             if (index == 0) {
                 return head;
             }
-
             Node elem = head;
             for (int i = 0; i <= index; i++) {
                 elem = elem.next;
