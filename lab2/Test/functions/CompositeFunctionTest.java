@@ -1,4 +1,4 @@
-package Test;
+package functions;
 
 import functions.CompositeFunction;
 import functions.SqrFunction;

@@ -1,4 +1,4 @@
-package Test;
+package functions;
 
 import functions.UnitFunction;
 import org.junit.jupiter.api.Test;
