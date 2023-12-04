@@ -1,4 +1,4 @@
-package functions;
+package Test;
 
 import functions.cos2xFunctions;
 import org.junit.jupiter.api.Test;

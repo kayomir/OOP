@@ -1,4 +1,4 @@
-package functions;
+package Test;
 
 import functions.SqrFunction;
 import org.junit.jupiter.api.Test;

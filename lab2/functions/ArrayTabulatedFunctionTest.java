@@ -2,6 +2,7 @@ package functions;
 
 import functions.ArrayTabulatedFunction;
 import functions.SqrFunction;
+import functions.cos2xFunctions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

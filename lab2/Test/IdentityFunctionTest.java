@@ -1,4 +1,4 @@
-package functions;
+package Test;
 
 import functions.ConstantFunction;
 import functions.IdentityFunction;
