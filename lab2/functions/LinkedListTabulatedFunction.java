@@ -259,7 +259,7 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
             private Node node=head;
             @Override
             public boolean hasNext() {
-                return ((node.next!=head)&&(node.next!=null));
+                return (node != null);
             }
 
             @Override

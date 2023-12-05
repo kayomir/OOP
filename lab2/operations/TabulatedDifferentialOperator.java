@@ -29,7 +29,8 @@ public class TabulatedDifferentialOperator implements DifferentialOperator<Tabul
         int i;
         for (i = 0; i < (function.getCount()-1); i++){
             xValues[i] = points[i].x;
-            yValues[i] = (points[i+1].y - points[i].y)/(points[i+1].x - points[i].x);
+            yValues[i] = (points[i + 1].y - points[i].y) / (points[i + 1].x - points[i].x);
+            i++;
         }
         xValues[i] = points[i].x;
         yValues[i] = yValues[i-1];
