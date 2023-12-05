@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements Cloneable{
 
@@ -14,8 +15,11 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
     protected int count;
 
     public ArrayTabulatedFunction(double[] xValues, double[] yValues){
-        if(xValues.length < 2) throw new IllegalArgumentException("недопустимое значение");
+        if (xValues == null || yValues == null) throw new IllegalArgumentException("Один или оба массивы имеют значение null");
+        if (xValues.length < 2) throw new IllegalArgumentException("Длина меньше минимальной");
         else {
+            checkLengthIsTheSame(xValues,yValues);
+            checkSorted(xValues);
             this.count = xValues.length;
             this.xValues = Arrays.copyOf(xValues, xValues.length);
             this.yValues = Arrays.copyOf(yValues, yValues.length);
@@ -196,8 +200,24 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
         return new ArrayTabulatedFunction(this.xValues, this.yValues);
     }
     @Override
-    public Iterator<Point> iterator()
-    {
-        throw new UnsupportedOperationException();
+    public Iterator<Point> iterator() {
+        return new Iterator<Point>() {
+            private int i = 0;
+
+            @Override
+            public boolean hasNext() {
+                return (i < count);
+            }
+
+            @Override
+            public Point next() {
+                if (hasNext()) {
+                    Point point = new Point(xValues[i], yValues[i]);
+                    ++i;
+                    return point;
+                } else throw new NoSuchElementException();
+            }
+        };
+
     }
 }
