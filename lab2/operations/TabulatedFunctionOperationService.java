@@ -72,7 +72,7 @@ public class TabulatedFunctionOperationService {
         Point[] points = new Point[tabulatedFunction.getCount()];
         for (Point point : tabulatedFunction){
             points[i] = point;
-            i++;
+            ++i;
         }
         return points;
     }

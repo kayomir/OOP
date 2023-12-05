@@ -1,8 +1,10 @@
 package operations;
+
 import functions.Point;
 import functions.TabulatedFunction;
 import functions.factory.ArrayTabulatedFunctionFactory;
 import functions.factory.TabulatedFunctionFactory;
+
 public class TabulatedDifferentialOperator implements DifferentialOperator<TabulatedFunction>{
     private TabulatedFunctionFactory factory;
 
@@ -29,8 +31,7 @@ public class TabulatedDifferentialOperator implements DifferentialOperator<Tabul
         int i;
         for (i = 0; i < (function.getCount()-1); i++){
             xValues[i] = points[i].x;
-            yValues[i] = (points[i + 1].y - points[i].y) / (points[i + 1].x - points[i].x);
-            i++;
+            yValues[i] = (points[i+1].y - points[i].y)/(points[i+1].x - points[i].x);
         }
         xValues[i] = points[i].x;
         yValues[i] = yValues[i-1];
