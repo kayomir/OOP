@@ -198,7 +198,7 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
         else if (indexOfX(x) != -1) return getY(indexOfX(x));
         else return interpolate(x,floorIndexOfX(x));
     }
-    @Override
+    /*@Override
     public String toString(){
         Node elem = head;
         String result = elem.toString();
@@ -210,7 +210,7 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
             result += " ";
         }
         return result;
-    }
+    }*/
     @Override
     public boolean equals(Object o){
         if (this == o) return true;

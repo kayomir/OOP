@@ -127,11 +127,6 @@ class LinkedListTabulatedFunctionTest {
         assertTrue(node.equals(clone));
     }
     @Test
-    void toStringList(){
-        assertEquals("(1.0; 1.0) (2.0; 2.0) (3.3; 3.0) (4.4; 4.0) (5.0; 5.0) (6.0; 6.0) ", linkedListTabulatedFunction1.toString());
-        assertEquals("(7.0; 9.0) (8.0; 7.0) ",linkedListTabulatedFunction3.toString() );
-    }
-    @Test
     void equalsList(){
         double[] xValue11 = {1, 2, 3.3, 4.4, 5, 6};
         double[] yValue11 = {1, 2, 3, 4, 5, 6};
@@ -232,5 +227,9 @@ class LinkedListTabulatedFunctionTest {
             assertEquals(linkedListTabulatedFunction1.getY(i),point.y);
             i++;
         }
+    }
+    @Test
+    void newToString(){
+        assertEquals(linkedListTabulatedFunction1.toString(), "LinkedListTabulatedFunction size = 6\n[1.0; 1.0]\n[2.0; 2.0]\n[3.3; 3.0]\n[4.4; 4.0]\n[5.0; 5.0]\n[6.0; 6.0]");
     }
 }

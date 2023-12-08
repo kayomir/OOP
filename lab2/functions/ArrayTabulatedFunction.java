@@ -171,13 +171,13 @@ public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements
         else return interpolate(x,floorIndexOfX(x));
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "{xValues=" + Arrays.toString(xValues) +
                 ", yValues=" + Arrays.toString(yValues) +
                 ", count=" + count +
                 '}';
-    }
+    }*/
 
     @Override
     public boolean equals(Object obj) {

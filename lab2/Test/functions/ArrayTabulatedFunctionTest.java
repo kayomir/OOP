@@ -354,6 +354,12 @@ class ArrayTabulatedFunctionTest {
             assertEquals(point.y, ATF.yValues[i]);
             ++i;
         }
-
+    }
+    @Test
+    void newToString(){
+        double[] x = {1, 2, 3.3, 4.4, 5, 6};
+        double[] y = {1, 2, 3, 4, 5, 6};
+        ArrayTabulatedFunction ATF = new ArrayTabulatedFunction(x,y);
+        assertEquals(ATF.toString(), "ArrayTabulatedFunction size = 6\n[1.0; 1.0]\n[2.0; 2.0]\n[3.3; 3.0]\n[4.4; 4.0]\n[5.0; 5.0]\n[6.0; 6.0]");
     }
 }

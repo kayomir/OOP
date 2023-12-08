@@ -32,5 +32,21 @@ public abstract class AbstractTabulatedFunction implements TabulatedFunction
             if (xValues[i]>=xValues[i+1]) throw new ArrayIsNotSortedException("Массив не является отсортированным");
         }
     }
+    @Override
+    public String toString(){
+        StringBuilder result = new StringBuilder();
+        result.append(this.getClass().getSimpleName());
+        result.append(" size = ");
+        result.append(this.getCount());
+        for(Point point : this){
+            result.append("\n");
+            result.append("[");
+            result.append(point.x);
+            result.append("; ");
+            result.append(point.y);
+            result.append("]");
+        }
+        return result.toString();
+    }
 }
 
