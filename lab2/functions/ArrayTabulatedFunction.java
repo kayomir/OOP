@@ -5,9 +5,12 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.io.Serializable;
+import exceptions.InterpolationException;
 
-public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements Cloneable{
 
+public class ArrayTabulatedFunction extends AbstractTabulatedFunction implements Cloneable, Serializable{
+    private static final long serialVersionUID = 2129554966826347219L;
     protected double [] xValues;
 
     protected double [] yValues;

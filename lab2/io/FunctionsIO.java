@@ -1,12 +1,23 @@
 package io;
 import functions.Point;
 import functions.TabulatedFunction;
-import java.io.*;
 import functions.factory.TabulatedFunctionFactory;
-
+import java.io.*;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
 public final class FunctionsIO {
     private FunctionsIO() {
         throw new UnsupportedOperationException();
+    }
+    public static void serialize(BufferedOutputStream stream, TabulatedFunction function) throws IOException {
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(stream);
+        objectOutputStream.writeObject(function);
+        objectOutputStream.flush();
+    }
+    public static TabulatedFunction deserialize(BufferedInputStream stream) throws IOException, ClassNotFoundException {
+        ObjectInputStream objectInputStream = new ObjectInputStream(stream);
+        return (TabulatedFunction) objectInputStream.readObject();
     }
     public static void writeTabulatedFunction(BufferedWriter writer, TabulatedFunction function){
         try {
@@ -20,8 +31,8 @@ public final class FunctionsIO {
             e.printStackTrace();
         }
     }
-    public static void writeTabulatedFunction(BufferedOutputStream outputStream, TabulatedFunction function) throws IOException {
-        try {
+    public static void writeTabulatedFunction(BufferedOutputStream outputStream, TabulatedFunction function){
+        try{
             DataOutputStream dos = new DataOutputStream(outputStream);
             dos.writeInt(function.getCount());
             for (Point point : function) {
@@ -29,9 +40,27 @@ public final class FunctionsIO {
                 dos.writeDouble(point.y);
             }
             dos.flush();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    static TabulatedFunction readTabulatedFunction(BufferedReader reader, TabulatedFunctionFactory factory) throws IOException {
+        int count = Integer.parseInt(reader.readLine());
+        double[] xValue = new double[count];
+        double[] yValue = new double[count];
+        NumberFormat formatter;
+        formatter = NumberFormat.getInstance(Locale.forLanguageTag("ru"));
+        for (int i = 0; i < count; i++) {
+            String[] str = reader.readLine().split(" ");
+            try {
+                xValue[i] = formatter.parse(str[0]).doubleValue();
+                yValue[i] = formatter.parse(str[1]).doubleValue();
+            } catch (ParseException e) {
+                throw new IOException(e);
+            }
+        }
+        return factory.create(xValue, yValue);
     }
     public static TabulatedFunction readTabulatedFunction(BufferedInputStream inputStream, TabulatedFunctionFactory factory) throws IOException {
         DataInputStream dis = new DataInputStream(inputStream);
@@ -44,4 +73,6 @@ public final class FunctionsIO {
         }
         return factory.create(X, Y);
     }
+
+
 }
