@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b9ac1ae-4a6c-4079-b9b6-7f767aec1cae" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/lab2/io/TabulatedFunctionFileOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/functions/ArrayTabulatedFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/io/FunctionsIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/io/FunctionsIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP1/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP1/functions/LinkedListTabulatedFunctionTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;baklashan228&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="42c99f9e-870b-4918-88e5-a1ce554cdc43" />
+        <option name="url" value="https://github.com/kayomir/OOP" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2WUcFS6KyqVw71YW6XWa1jdM50p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/gutur/IdeaProjects/OOP/lab2/functions&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gutur\IdeaProjects\OOP\lab2\Test" />
+      <recent name="C:\Users\gutur\IdeaProjects\OOP\lab2\functions" />
+      <recent name="C:\Users\gutur\IdeaProjects\OOP\lab2\tests" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="operations" />
+      <recent name="functions.factory" />
+      <recent name="Test.functions" />
+      <recent name="Test" />
+      <recent name="functions" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="4" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.All in OOP1">
+    <configuration name="TabulatedFunctionFileOutputStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.TabulatedFunctionFileOutputStream" />
+      <module name="OOP1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in OOP1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTabulatedFunctionTest.equalsList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="functions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="functions" />
+      <option name="MAIN_CLASS_NAME" value="functions.LinkedListTabulatedFunctionTest" />
+      <option name="METHOD_NAME" value="equalsList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTabulatedFunctionTest.newToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="functions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="functions" />
+      <option name="MAIN_CLASS_NAME" value="functions.LinkedListTabulatedFunctionTest" />
+      <option name="METHOD_NAME" value="newToString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTabulatedFunctionTest.toStringList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="functions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="functions" />
+      <option name="MAIN_CLASS_NAME" value="functions.LinkedListTabulatedFunctionTest" />
+      <option name="METHOD_NAME" value="toStringList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in OOP1" />
+        <item itemvalue="Application.TabulatedFunctionFileOutputStream" />
+        <item itemvalue="JUnit.LinkedListTabulatedFunctionTest.toStringList" />
+        <item itemvalue="JUnit.LinkedListTabulatedFunctionTest.equalsList" />
+        <item itemvalue="JUnit.LinkedListTabulatedFunctionTest.newToString" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b9ac1ae-4a6c-4079-b9b6-7f767aec1cae" name="Changes" comment="" />
+      <created>1696790494459</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696790494459</updated>
+    </task>
+    <task id="LOCAL-00001" summary="фт">
+      <option name="closed" value="true" />
+      <created>1696950153769</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696950153769</updated>
+    </task>
+    <task id="LOCAL-00002" summary="фт">
+      <option name="closed" value="true" />
+      <created>1699619312527</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699619312527</updated>
+    </task>
+    <task id="LOCAL-00003" summary="фт">
+      <option name="closed" value="true" />
+      <created>1699863977414</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699863977414</updated>
+    </task>
+    <task id="LOCAL-00004" summary="фт">
+      <option name="closed" value="true" />
+      <created>1699974381781</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699974381781</updated>
+    </task>
+    <task id="LOCAL-00005" summary="фт">
+      <option name="closed" value="true" />
+      <created>1700410018284</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700410018284</updated>
+    </task>
+    <task id="LOCAL-00006" summary="фт">
+      <option name="closed" value="true" />
+      <created>1700471930148</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700471930148</updated>
+    </task>
+    <task id="LOCAL-00007" summary="фт">
+      <option name="closed" value="true" />
+      <created>1700471970336</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700471970336</updated>
+    </task>
+    <task id="LOCAL-00008" summary="фт">
+      <option name="closed" value="true" />
+      <created>1700489109588</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700489109588</updated>
+    </task>
+    <task id="LOCAL-00009" summary="фт">
+      <option name="closed" value="true" />
+      <created>1700893546989</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700893546989</updated>
+    </task>
+    <task id="LOCAL-00010" summary="фт">
+      <option name="closed" value="true" />
+      <created>1700893568970</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700893568970</updated>
+    </task>
+    <task id="LOCAL-00011" summary="фт">
+      <option name="closed" value="true" />
+      <created>1701680371283</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701680371283</updated>
+    </task>
+    <task id="LOCAL-00012" summary="фт">
+      <option name="closed" value="true" />
+      <created>1701687954765</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701687954765</updated>
+    </task>
+    <task id="LOCAL-00013" summary="фт">
+      <option name="closed" value="true" />
+      <created>1701688043111</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701688043111</updated>
+    </task>
+    <task id="LOCAL-00014" summary="фт">
+      <option name="closed" value="true" />
+      <created>1701709770813</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701709770813</updated>
+    </task>
+    <task id="LOCAL-00015" summary="задание 1 И часть 2 задания">
+      <option name="closed" value="true" />
+      <created>1701724640503</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701724640503</updated>
+    </task>
+    <task id="LOCAL-00016" summary="задание 1 И часть 2 задания">
+      <option name="closed" value="true" />
+      <created>1701724672813</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701724672813</updated>
+    </task>
+    <task id="LOCAL-00017" summary="differential + Linkedlist">
+      <option name="closed" value="true" />
+      <created>1701759003964</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701759003964</updated>
+    </task>
+    <task id="LOCAL-00018" summary="TabulateddifferentialOperatorTest+ TabulatedFunctionOperationServiceTest">
+      <option name="closed" value="true" />
+      <created>1701787885192</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701787885192</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Factory test">
+      <option name="closed" value="true" />
+      <created>1701787914376</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701787914376</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Lab 5 x 1.1 1.2">
+      <option name="closed" value="true" />
+      <created>1702057865424</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1702057865424</updated>
+    </task>
+    <task id="LOCAL-00021" summary=".">
+      <option name="closed" value="true" />
+      <created>1702057890039</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1702057890039</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <MESSAGE value="фт" />
+    <MESSAGE value="задание 1 И часть 2 задания" />
+    <MESSAGE value="differential + Linkedlist" />
+    <MESSAGE value="TabulateddifferentialOperatorTest+ TabulatedFunctionOperationServiceTest" />
+    <MESSAGE value="Factory test" />
+    <MESSAGE value="Lab 5 x 1.1 1.2" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OOP$LinkedListTabulatedFunctionTest_toStringList.ic" NAME="LinkedListTabulatedFunctionTest.toStringList Coverage Results" MODIFIED="1700488192065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>functions.*</FILTER>
+    </SUITE>
+  </component>
+</project>
