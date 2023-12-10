@@ -3,8 +3,10 @@ import java.awt.*;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-public class LinkedListTabulatedFunction extends AbstractTabulatedFunction implements Cloneable {
-    static class Node implements Cloneable {
+import java.io.Serializable;
+import exceptions.InterpolationException;
+public class LinkedListTabulatedFunction extends AbstractTabulatedFunction implements Cloneable, Serializable {
+    static class Node implements Cloneable, Serializable {
         Node next;
         Node prev;
         double x;
@@ -41,7 +43,7 @@ public class LinkedListTabulatedFunction extends AbstractTabulatedFunction imple
 
     private int count;
     private Node head;
-
+    private static final long serialVersionUID = 2906642554793891381L;
     private void addNode(double x, double y) {
         Node newNode = new Node(x, y);
         if (head == null) {
