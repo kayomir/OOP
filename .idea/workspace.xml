@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b9ac1ae-4a6c-4079-b9b6-7f767aec1cae" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9b9ac1ae-4a6c-4079-b9b6-7f767aec1cae" name="Changes" comment="lab 6">
+      <change afterPath="$PROJECT_DIR$/lab2/concurrent/SynchronizedTabulatedFunction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702312647427</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="lab 6">
+      <option name="closed" value="true" />
+      <created>1702313548368</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1702313548368</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,7 +410,8 @@
     <MESSAGE value="Factory test" />
     <MESSAGE value="Lab 5 x 1.1 1.2" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="lab 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 6" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOP$LinkedListTabulatedFunctionTest_toStringList.ic" NAME="LinkedListTabulatedFunctionTest.toStringList Coverage Results" MODIFIED="1700488192065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
