@@ -1,5 +1,4 @@
 package io;
-import functions.ArrayTabulatedFunction;
 import functions.LinkedListTabulatedFunction;
 import functions.TabulatedFunction;
 import operations.TabulatedDifferentialOperator;
