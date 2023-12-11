@@ -4,7 +4,7 @@ import functions.TabulatedFunction;
 import operations.TabulatedDifferentialOperator;
 
 import java.io.*;
-public class LinkedListTabulatedFunctionSerializable {
+public class    LinkedListTabulatedFunctionSerializable {
     public static void main(String[] args) {
         try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("output/serialized linked list functions.bin"))) {
             double[] xValue = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
